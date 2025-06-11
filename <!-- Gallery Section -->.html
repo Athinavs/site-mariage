@@ -1,0 +1,111 @@
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-nav prev" onclick="previousImage()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+            </svg>
+        </div>
+        <div class="gallery-nav next" onclick="nextImage()">
+            <svg viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+            </svg>
+        </div>
+        <div class="gallery-image">
+            <img id="galleryImage" src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mariage en extérieur">
+        </div>
+    </section>
+
+    <!-- Philosophy Section with background photo -->
+    <section class="philosophy" style="background: url('https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;">
+        <div class="philosophy-content" style="background-color: rgba(255,255,255,0.85); padding: 40px; border-radius: 20px;">
+            <div class="star-icon">✦</div>
+            <h2>La vie peut être imprévisible…</h2>
+            <h3>Créons le décor qui célébrera votre amour.</h3>
+            <a href="#services" class="cta-link">Nos services ></a>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories-section" id="blog">
+        <div class="stories-title">
+            <h2>Histoires vraies</h2>
+        </div>
+        <div class="stories-grid">
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1525396528778-2dbf5d6a59df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mariage à la plage">
+                </div>
+                <h3>Camille & Hugo</h3>
+                <p>Un mariage en bord de mer, simple et lumineux, entouré de leurs proches.</p>
+                <a href="#" class="story-link">Lire leur histoire ></a>
+            </div>
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1529634806980-1e1c5c2383f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mariage romantique">
+                </div>
+                <h3>Élodie & Thomas</h3>
+                <p>Une cérémonie romantique au cœur des vignes de Bourgogne.</p>
+                <a href="#" class="story-link">Lire leur histoire ></a>
+            </div>
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1530619896485-7f6a964da510?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mariage champêtre">
+                </div>
+                <h3>Claire & Julien</h3>
+                <p>Un mariage champêtre dans un domaine familial du sud de la France.</p>
+                <a href="#" class="story-link">Lire leur histoire ></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorative Footer Image -->
+    <div class="footer-image" style="width:100%; height:300px; overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1582727461292-190f6ebd1bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Décoration de mariage" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-left">
+            <h3>Restez informé·e des prochaines dates et conseils mariage</h3>
+            <div class="email-signup">
+                <input type="email" placeholder="Votre adresse e-mail" class="email-input">
+                <button class="signup-btn">S'inscrire</button>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-column">
+                <a href="#">À propos</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-column">
+                <a href="#">Conditions</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Laurie Payton. Site propulsé par <a href="#" class="squarespace">Squarespace</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Updated Gallery Script -->
+    <script>
+        const galleryImages = [
+            "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1585155777347-06ec43a3164e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1496439786094-e697e7d8c39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        ];
+        let currentImageIndex = 0;
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+        }
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+        }
+    </script>
+</body>
+</html>
